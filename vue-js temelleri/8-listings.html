@@ -7,7 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VueJs | UGUR KUREKCI</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red {
+            background-color: red;
+        }
 
+        .green {
+            background-color: limegreen;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,9 +26,16 @@
         <hr>
         <div v-for="(value,key) in personel">{{key +" "+ value}} </div>
         <hr>
-
         <ul>
             <li v-for="item in personelList" v-if="item.status==true">{{item.name +" "+item.surname+""+item.email}}
+                <button @click="item.status=false">Ayrıldı</button>
+            </li>
+
+            <hr>
+
+            <li v-for="item in personelList" :class="backgroundByStatus(item)">{{item.name
+                +" "+item.surname+""+item.email}}
+                <button @click="item.status=false">Ayrıldı</button>
             </li>
         </ul>
 
@@ -37,7 +52,6 @@
                     email: "ugurkurekci98@gmail.com",
                     status: false
                 },
-
                 personelList: [
                     {
                         name: "Uğur",
@@ -70,6 +84,12 @@
 
                 ]
             },
+            methods: {
+                backgroundByStatus(item) {
+                    return { 'green': item.status == true, 'red': item.status == false }
+                }
+            }
+
         });
     </script>
 </body>
