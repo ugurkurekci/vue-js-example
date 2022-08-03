@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs | UGUR KUREKCI</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="showBox=!showBox">Göster/Gizle</button>
+        <p v-if="showBox">bu sayfa açıldığında gösterilecek.</p>
+        <!--  <p v-else-if="!showBox">bu sayfa açıldığında gösterilmeyecek. Buton yardımıyla gözükecek.</p> -->
+        <p v-else>Aksi halde gözüksün.</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                showBox: false,
+            },
+        });
+    </script>
+</body>
+
+</html>

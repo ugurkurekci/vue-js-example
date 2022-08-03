@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs | UGUR KUREKCI</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>{{title}}</h3>
+        <button>{{buttonTitle}}</button>,
+        <p>{{paragraph}}</p>
+        <p v-text="paragraph"></p>
+        <a :href="link">Tıkla Gitsin</a>
+        <p v-html="details"></p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                title: "test baslik",
+                buttonTitle: "Tıkla",
+                paragraph: "lorem ipsum dolor sit amet",
+                link: "https://www.google.com",
+
+                details: "<b>test mesajı</b>"
+            }
+        });
+    </script>
+</body>
+
+</html>
